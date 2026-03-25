@@ -1,0 +1,120 @@
+:root {
+    --backgroundClr: #008482;
+    --foregorundClr: #C0C0C0;
+    --titlebarTextClr: #ffffff;
+
+    --titleBackgroundFrom_user1: #020286;
+    --titleBackgroundTo_user1: #8888f3;
+    --titleBackground_user1: linear-gradient(to right, #020286, #8888f3);
+
+    --titleBackgroundFrom_user2: #7B0000;
+    --titleBackgroundTo_user2: #ff4141;
+    --titleBackground_user2: linear-gradient(to right, #7B0000, #ff4141);
+
+    --borderBottomClr: #1C1C1C;
+    --borderTopClr: #ffffff;
+    --borderMidlleClr: #76756F;
+
+    --contentBorderClr: rgba(66, 66, 66, 0.2);
+    --contentShadow: rgba(255, 255, 255, 0.2);
+}
+
+.chat {
+    background-color: var(--backgroundClr);
+    padding: 10%;
+    font-family:"VT323", monospace;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.user1 {
+    align-self: flex-start;
+}
+.user2 {
+    align-self: flex-end;
+}
+
+.windows_wrap {
+    width: 60%;
+    padding: 5px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.windows_border {
+    background-color: var(--foregorundClr);
+
+    border-style: outset;
+    border-width: 3px;
+    border-color: var(--borderTopClr) var(--borderBottomClr) var(--borderBottomClr) var(--borderTopClr);
+    box-shadow:
+            inset 2px 2px var(--borderTopClr),
+            inset -2px -2px var(--borderMidlleClr);
+}
+
+.windows_top {
+    border-width: 2px;
+    border-style: solid;
+
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 0 5px;
+
+    padding: 5px 10px;
+}
+
+.user1 .windows_top {
+    border-image: linear-gradient(to left, var(--titleBackgroundFrom_user1) 0%, var(--titleBackgroundTo_user1) 100%) 1;
+    background: var(--titleBackground_user1);
+}
+
+.user2 .windows_top {
+    border-image: linear-gradient(to left, var(--titleBackgroundFrom_user2) 0%, var(--titleBackgroundTo_user2) 100%) 1;
+    background: var(--titleBackground_user2);
+}
+
+.windows_btn {
+    font-family: "Jersey 25", sans-serif;
+    font-weight: 900;
+
+    width: 3%;
+    aspect-ratio: 1 / 1;
+
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+}
+
+.windows_header {
+    color: white;
+    text-shadow: 1px 1px black;
+    font-size: 1.5em;
+    letter-spacing: 1px;
+
+    flex-grow: 4;
+}
+
+.windows_header::before {
+    content: "💬";
+    font-size: 0.7em;
+    margin-right: 5px;
+}
+
+.windows_content {
+    background: white;
+    border-width: 3px;
+    border-style: solid;
+    border-color: var(--borderBottomClr) var(--foregorundClr) var(--foregorundClr) var(--borderBottomClr);
+
+    padding: 5px 10px;
+    margin: 10px;
+
+    letter-spacing: 1px;
+    font-size: 1.2em;
+}
+
+
